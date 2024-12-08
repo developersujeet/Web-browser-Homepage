@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Homepage</title>
+  <style>
+    /* Global Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #111113);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+
+    .navbar a {
+      margin: 0 15px;
+      color: #aaa;
+      font-size: 16px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #00f5d4;
+    }
+
+    /* Logo Section */
+    .logo-section {
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    .logo-section img {
+      width: 150px;
+      animation: rotate 10s infinite linear;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 20px;
+      color: #fff;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #00f5d4;
+    }
+
+    /* "Coding is Love" Section */
+    .coding-love {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #00f5d4;
+      text-shadow: 0px 0px 20px #00f5d4;
+      animation: pulse 2s infinite;
+      z-index: 10;
+      cursor: pointer;
+      display: inline-block;
+      max-width: 200px;
+      text-align: right;
+      padding: 5px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0px 0px 20px #00f5d4, 0px 0px 40px #00d9ff;
+      }
+      50% {
+        text-shadow: 0px 0px 40px #00f5d4, 0px 0px 80px #00d9ff;
+      }
+    }
+
+    /* Search Section */
+    .search-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .search-bar {
+      position: relative;
+      display: inline-block;
+    }
+
+    .search-bar input {
+      padding: 15px;
+      width: 300px;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      font-size: 16px;
+      background: #222;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .search-bar button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: #00f5d4;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00f5d4;
+      transition: transform 0.2s;
+    }
+
+    .search-bar button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Website Cards */
+    .websites {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 20px;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .website-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      width: 150px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+    }
+
+    .website-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #00f5d4;
+    }
+
+    .website-card img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .website-card a {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .search-bar input {
+        width: 400px;
+      }
+
+      .websites {
+        gap: 30px;
+      }
+
+      .website-card {
+        width: 180px;
+      }
+
+      .logo-section img {
+        width: 200px;
+      }
+
+      /* Adjust for desktop mode */
+      .coding-love {
+        font-size: 32px;
+        top: 30px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#">Gmail</a>
+    <a href="#">Unsplash</a>
+    <a href="#">My Site</a>
+    <a href="#">About</a>
+  </div>
+
+  <!-- "Coding is Love" (Editable) -->
+  <div class="coding-love" id="codingLove">
+  <h6 contenteditable="true" onblur="saveText()" id="text">Coding is love ❤️</h6> <!-- Fixed the closing tag -->
+</div>
+
+  <!-- Logo Section -->
+  <div class="logo-section">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg" alt="Electron Logo">
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_self">Instagram</a>
+      <a href="https://youtube.com" target="_self">YouTube</a>
+      <a href="https://facebook.com" target="_self">Facebook</a>
+      <a href="https://linkedin.com" target="_self">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search anything...">
+      <button onclick="performSearch()">🔍</button>
+    </div>
+  </div>
+
+  <!-- Frequently Used Websites -->
+  <div class="websites">
+    <div class="website-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+      <a href="https://github.com" target="_self">GitHub</a>
+    </div>
+    <div class="website-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      <a href="https://youtube.com" target="_self">YouTube</a>
+    </div>
+    <div class="website-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+      <a href="https://google.com" target="_self">Google</a>
+    </div>
+    <div class="website-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+      <a href="https://instagram.com" target="_self">Instagram</a>
+    </div>
+  </div>
+
+  <script>
+    // Perform search function
+    function performSearch() {
+      const query = document.getElementById('search').value.trim();
+      if (query) {
+        window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+      } else {
+        alert('Please enter a search term!');
+      }
+    }
+
+    function saveText() {
+      const text = document.getElementById('text').innerText; // Use innerText for contenteditable
+      localStorage.setItem('codingLoveText', text);
+}
+
+    document.getElementById("text").oninput = saveText;
+    window.onload = function() {
+    const savedText = localStorage.getItem('codingLoveText');
+    if (savedText) {
+    document.getElementById('text').innerText = savedText;
+  }
+};
+  </script>
+</body>
+</html>
