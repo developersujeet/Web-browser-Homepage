@@ -271,10 +271,10 @@
     function performSearch() {
       const query = document.getElementById('search').value.trim();
       if (query) {
-        if (!query.startsWith("https")) {
-          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        if (!query.startsWith("https") && !query.startsWith("http") && !query.includes(".")) {
+          window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`);
         } else {
-          window.open(query);
+          window.location.href = query;
         }
       } else {
         alert('Please enter a search term!');
@@ -295,4 +295,4 @@
 };
   </script>
 </body>
-    </html>
+        </html>
